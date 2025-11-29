@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    {% include 'cpanel/adminheader.html' %}
+    <center>
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <h1>COLLAGE RECORD</h1>
+                    <table class="table table-bordered">
+                        <tr>
+                            <th>PHOTO</th>
+                            <th>COLLAGE_NAME</th>
+                            <th>COURSE</th>
+                            <th>EMAIL_ID</th>
+                            <th>CONTACT_NO</th>
+                            <th>ADDRESS</th> 
+                            <th>CITY</th>
+                            <th>ACTION</th>       
+                        </tr>
+                        {% for i in data %}
+                        <tr>
+                            <td><img src="static/upload/{{i.img}}"width='130px' height="100px"></td>
+                            <td>{{i.cname}}</td>
+                            <td>{{i.crs}}</td>
+                            <td>{{i.em}}</td>
+                            <td>{{i.cno}}</td>
+                            <td>{{i.addr}}</td>
+                            <td>{{i.city}}</td>
+                            <td>
+                                <a href="/viewenquiry/{{i.id}}" ><img src="static/upload/images.png" style="width: 25%; height:25%;" ></a>
+                                <a href="/delcollage/{{i.id}}" ><img src="static/upload/Delete.png" ></a>
+                                <a href="/editcollage/{{i.id}}"><img src="static/upload/edit.png" style="width: 25%; height:25%;"></a>
+                            </td>
+                        </tr>
+                        {% endfor %}
+                    </table>
+                </div>
+            </div>
+        </div>
+       
+    </center>
+</body>
+</html>

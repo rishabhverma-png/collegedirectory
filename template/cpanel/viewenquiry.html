@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    {% include 'cpanel/adminheader.html' %}
+    <center>
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <h1>COLLAGE RECORD</h1>
+                    <table class="table table-bordered">
+                        <tr>
+                            <th>NAME</th>
+                            <th>EMAIL_ID</th>
+                            <th>CONTACT_NO</th> 
+                            <th>CITY</th>
+                            <th>QUIRY</th>
+                            <th>ACTION</th>       
+                        </tr>
+                        {% for i in data %}
+                        <tr>
+                            <td>{{i.name}}</td>
+                            <td>{{i.cno}}</td>
+                            <td>{{i.email}}</td>
+                            <td>{{i.qry}}</td>
+                            <td>{{i.city}}</td>
+                            <td>  
+                              <a href="/delenquiry/{{i.id}}" ><img src="/static/upload/Delete.png" ></a>
+                            </td>
+                        </tr>
+                        {% endfor %}
+                    </table>
+                    <center>
+                        <a href="/record"><-BACK</a>
+                    </center>
+                </div>
+            </div>
+        </div>
+       
+    </center>
+</body>
+</html>

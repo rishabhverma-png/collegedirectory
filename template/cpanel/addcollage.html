@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background:url('/static/img/study.webp');">
+    {% include 'cpanel/adminheader.html' %}
+    <center>
+       
+        
+            <div class="container">
+                <div class="row">
+                    <div class="col-3 mt-3"></div>
+                    <div class="col-6 mt-3">
+                      <form method="post" action="/savecollage" enctype="multipart/form-data">
+                        {% csrf_token %}
+                       <div style="width:100;height:600px; border: 1px solid #ccc; border-radius: 10px; background-color: aqua; padding:20px;margin-top: 50px; ">
+                           <h1>Add collage record</h1>
+                           <div class="col-12 mt-3">
+                               <select name="city" class="form-control">
+                                <option value="">select city</option>
+                                <option value="Raipur">Raipur</option>
+                                <option value="Bilaspur">Bilaspur</option>
+                                <option value="Ambikapur">Ambikapur</option>
+                                <option value="Mahasamund">Mahasamund</option>
+                                <option value="Durg">Durg</option>
+                               </select>
+                           </div>
+                           <div class="col-12 mt-3">
+                              <input type="text" name="cname" class="form-control" placeholder="Collage name">
+                           </div>
+                           <div class="col-12 mt-3">
+                              <input type="text" name="crs" class="form-control" placeholder="Courses">
+                           </div>
+                           <div class="col-12 mt-3">
+                            <input type="text" name="em" class="form-control" placeholder="Email id.">
+                           </div>
+                           <div class="col-12 mt-3">
+                            <input type="text" name="cno" class="form-control" placeholder="Contact no.">
+                           </div>
+                           <div class="col-12 mt-3">
+                            <input type="text" name="addr" class="form-control" placeholder="Address">
+                           </div>
+                           <div class="col-12 mt-3">
+                            <input type="text" name="loc" class="form-control" placeholder="MAP location">
+                           </div>
+                           <div class="col-12 mt-3">
+                            <b>UPLOAD PHOTO:</b>
+                            <input type="file" name="img" class="form-control" placeholder="images">
+                           </div>
+                           <div class="col-12 mt-3">
+                              <input type="submit" name="sub" class="btn btn-primary" value="submit">
+                           </div>
+                       </div>
+                      </form>
+                    </div>
+                    <div class="col-1"></div>   
+                </div>
+            </div>
+        
+    </center>
+</body>
+</html>
